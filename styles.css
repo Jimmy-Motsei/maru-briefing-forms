@@ -29,7 +29,12 @@ body {
   z-index: 5;
 }
 .header img {
-  height: 60px;
+  height: 80px; /* 2x the headline height (1.25rem = 20px) */
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.header img:hover {
+  opacity: 0.8;
 }
 .header .title {
   font-weight: 700;
@@ -49,7 +54,7 @@ body {
   margin: 16px 0;
 }
 h2 {
-  margin: 0 0 16px;
+  margin: 32px 0 16px;
   color: #0b2533;
   line-height: 1.4;
 }
