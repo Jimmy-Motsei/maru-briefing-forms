@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Maru Online — Client Briefing Forms</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 16px;
+        margin-top: 16px;
+      }
+      .card {
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 4px 20px rgba(2, 8, 23, 0.06);
+        padding: 24px;
+      }
+      .card h3 {
+        margin: 0 0 8px;
+      }
+      .card p {
+        color: #6b7280;
+      }
+      .card a button {
+        margin-top: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <img src="assets/maru-logo.png" alt="Maru Online logo" />
+      <div class="title">Maru Online — Client Briefing Forms</div>
+    </header>
+    <main class="container">
+      <div class="form-card">
+        <p>
+          Welcome. Choose the form that matches your needs. These forms are
+          POPIA-compliant and take 5–10 minutes. If you're unsure about any
+          field, leave it blank—we'll confirm during discovery.
+        </p>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <h3>Web Development Brief</h3>
+          <p>
+            Website goals, functionality, design direction, tech setup, budget &
+            timeline.
+          </p>
+          <a href="maru-web-dev-briefing-v2.html"
+            ><button>Open Web Dev Form</button></a
+          >
+        </div>
+        <div class="card">
+          <h3>AI Solution Brief</h3>
+          <p>
+            Current processes & systems, desired AI features, integrations,
+            security & ROI.
+          </p>
+          <a href="ai-solution-briefing-v2.html"
+            ><button>Open AI Solution Form</button></a
+          >
+        </div>
+      </div>
+      <p class="footer">© 2025 Maru Online. All rights reserved.</p>
+    </main>
+  </body>
+</html>
+
