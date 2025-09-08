@@ -28,6 +28,9 @@ body {
   top: 0;
   z-index: 5;
 }
+.header a {
+  text-decoration: none;
+}
 .header img {
   height: 80px; /* 2x the headline height (1.25rem = 20px) */
   cursor: pointer;
