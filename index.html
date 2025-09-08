@@ -24,14 +24,39 @@
       .card p {
         color: #6b7280;
       }
-      .card a button {
+      .card a {
+        text-decoration: none !important;
+        display: inline-block;
         margin-top: 8px;
+      }
+      .card a:visited {
+        text-decoration: none !important;
+      }
+      .card a:hover {
+        text-decoration: none !important;
+      }
+      .card button {
+        all: unset;
+        background: var(--brand-primary);
+        color: #fff;
+        padding: 12px 18px;
+        border-radius: 12px;
+        cursor: pointer;
+        font-weight: 600;
+        display: block;
+        text-align: center;
+        transition: background-color 0.2s;
+      }
+      .card button:hover {
+        background: #0d8a9a;
       }
     </style>
   </head>
   <body>
     <header class="header">
-      <img src="assets/maru-logo.png" alt="Maru Online logo" />
+      <a href="https://www.maruonline.com" target="_blank" rel="noopener">
+        <img src="assets/maru-logo.png" alt="Maru Online logo" />
+      </a>
       <h1 class="title">Maru Online — Client Briefing Forms</h1>
     </header>
     <main class="container">

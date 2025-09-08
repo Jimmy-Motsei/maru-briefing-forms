@@ -1,4 +1,4 @@
-:root {
+git:root {
   --brand-primary: #0ea5b6; /* teal from logo */
   --brand-dark: #37474f;
   --brand-light: #f6f9fb;
@@ -32,7 +32,7 @@ body {
   text-decoration: none;
 }
 .header img {
-  height: 80px; /* 2x the headline height (1.25rem = 20px) */
+  height: 120px; /* 50% size increase from previous 80px */
   cursor: pointer;
   transition: opacity 0.2s;
 }
