@@ -1,172 +1,344 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Maru Online Web Dev Briefing Form (v2)</title>
-  <link rel="stylesheet" href="styles.css"/>
-</head>
-<body>
-  <header class="header">
-    <img src="assets/maru-logo.png" alt="Maru Online logo"/>
-    <div class="title">Maru Online Web Dev Briefing Form (v2)</div>
-  </header>
-  <main class="container">
-    <div class="form-card"><p><strong>About this form:</strong> This form helps us understand your website project in detail. By completing it, you’ll give us the context, goals, functionality needs, and design direction to propose the best technical and creative solution. Please answer as clearly as possible — but don’t worry if you can’t fill in every field. Focus on your goals, pain points, and must-haves. We’ll guide you through the rest during discovery.</p></div>
-    
-    <div class="note">This form is GitHub Pages-ready. For submissions, deploy on Netlify and keep the <code>data-netlify="true" netlify-honeypot="bot-field"</code> attribute.</div>
-    <form class="form-card" action="/thank-you.html" id="maru-web-dev-brief-v2" name="maru-web-dev-brief-v2" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-      <input type="hidden" name="form-name">
-      <p class="hidden" style="display:none"><label>Don’t fill this out if you’re human: <input name="bot-field" /></label></p
-      > value="maru-web-dev-brief-v2"/>
-      
-<h2>0) Current Systems & Pain Points</h2>
-<label>Current systems in use (select all that apply)</label>
-<div class="checkbox-group">
-  <label class="tag"><input type="checkbox" name="current.systems" value="manual"> Manual processes</label>
-  <label class="tag"><input type="checkbox" name="current.systems" value="zoho"> Zoho</label>
-  <label class="tag"><input type="checkbox" name="current.systems" value="hubspot"> HubSpot</label>
-  <label class="tag"><input type="checkbox" name="current.systems" value="wordpress"> WordPress</label>
-  <label class="tag"><input type="checkbox" name="current.systems" value="excel"> Excel/Spreadsheets</label>
-  <label class="tag"><input type="checkbox" name="current.systems" value="custom"> Custom-built</label>
-  <label class="tag"><input type="checkbox" name="current.systems" value="other"> Other</label>
-</div>
-<label class="required">Summary of current website/system pain points</label>
-<textarea name="current.pain_points" required placeholder="Describe what's not working: content updates hard, poor SEO, mobile issues, slow performance, lack of analytics, etc."></textarea>
-<hr/>
-
-      <input type="hidden" name="form-name">
-      <p class="hidden" style="display:none"><label>Don’t fill this out if you’re human: <input name="bot-field" /></label></p
-      > value="maru-web-dev-brief"/>
-      
-<h2>Client & Project</h2>
-<div class="grid">
-  <div>
-    <label class="required">Company / Organisation</label>
-    <input name="client.company" type="text" required>
-  </div>
-  <div>
-    <label>Primary Contact</label>
-    <input name="client.contact_name" type="text">
-  </div>
-  <div>
-    <label class="required">Email</label>
-    <input name="client.email" type="email" required>
-  </div>
-  <div>
-    <label>Phone</label>
-    <input name="client.phone" type="text">
-  </div>
-</div>
-
-<h2>1) Project Overview</h2>
-<label class="required">Business & website goals</label>
-<textarea name="overview.goals" required placeholder="e.g., increase qualified leads by 30%; launch brand site for new product line"></textarea>
-<label>Target audience & segments</label>
-<textarea name="overview.audience" placeholder="e.g., SMEs in logistics; marketing managers; procurement"></textarea>
-<label>Key differentiators</label>
-<textarea name="overview.differentiation"></textarea>
-<label>Primary call-to-action (CTA)</label>
-<input name="overview.primary_cta" type="text" placeholder="e.g., Book a demo / Request a quote">
-<small class="helper">Map to your sales funnel (TOFU/MOFU/BOFU).</small>
-<label>Design inspiration URLs (comma-separated)</label>
-<input name="overview.inspiration_urls" type="text" placeholder="https://example.com, https://example2.com">
-
-<h2>2) Functionality</h2>
-<label>Core features (select all that apply)</label>
-<div class="checkbox-group">
-  <label class="tag"><input type="checkbox" name="func.features" value="contact-forms"> Contact forms</label>
-  <label class="tag"><input type="checkbox" name="func.features" value="blog"> Blog</label>
-  <label class="tag"><input type="checkbox" name="func.features" value="cms"> CMS</label>
-  <label class="tag"><input type="checkbox" name="func.features" value="ecommerce"> E‑commerce</label>
-  <label class="tag"><input type="checkbox" name="func.features" value="booking"> Booking/appointments</label>
-  <label class="tag"><input type="checkbox" name="func.features" value="multilingual"> Multilingual/i18n</label>
-  <label class="tag"><input type="checkbox" name="func.features" value="search"> Site search</label>
-  <label class="tag"><input type="checkbox" name="func.features" value="members"> Member accounts</label>
-</div>
-
-<fieldset>
-  <legend>E‑commerce (if applicable)</legend>
-  <div class="grid">
-    <div><label>Products ready?</label><select name="ecom.products_ready"><option>No</option><option>Yes</option></select></div>
-    <div><label>Payment gateways</label><input name="ecom.gateways" type="text" placeholder="e.g., PayFast, PayPal, Stripe"></div>
-    <div><label>Fulfilment/shipping</label><input name="ecom.shipping" type="text" placeholder="Carrier, rates, warehouse"></div>
-  </div>
-</fieldset>
-
-<label>Integrations</label>
-<input name="func.integrations" type="text" placeholder="HubSpot, GA4, Search Console, WhatsApp, Monday.com, etc.">
-
-<h2>3) Content</h2>
-<label>Primary navigation (top-level)</label>
-<input name="content.nav" type="text" placeholder="Home, About, Services, Case Studies, Blog, Contact">
-<label>Content inventory & sources</label>
-<textarea name="content.inventory" placeholder="What exists vs what must be created (copy, images, video, PDFs)"></textarea>
-<label>Content management needs</label>
-<select name="content.cms_need">
-  <option>Simple edits only</option>
-  <option>Full CMS – multiple editors</option>
-  <option>No CMS required</option>
-</select>
-
-<h2>4) Design & Branding</h2>
-<div class="grid">
-  <div>
-    <label>Brand personality</label>
-    <select name="design.personality">
-      <option>Modern</option><option>Professional</option><option>Friendly</option><option>Corporate</option><option>Minimalist</option><option>Playful</option>
-    </select>
-  </div>
-  <div>
-    <label>Style guide available?</label>
-    <select name="design.styleguide"><option>No</option><option>Yes</option></select>
-  </div>
-</div>
-<label>Assets available (list URLs or files to share later)</label>
-<textarea name="design.assets"></textarea>
-
-<h2>5) Technical Setup</h2>
-<div class="grid">
-  <div><label>Hosting</label><input name="tech.hosting" type="text" placeholder="e.g., Vercel, Netlify, AWS, existing cPanel"></div>
-  <div><label>Domain(s)</label><input name="tech.domains" type="text"></div>
-  <div><label>Emails</label><input name="tech.emails" type="text" placeholder="Google Workspace, Outlook, etc."></div>
-  <div><label>Analytics</label><input name="tech.analytics" type="text" placeholder="GA4, GTM, Meta Pixel"></div>
-</div>
-
-<h2>6) Budget & Timeline</h2>
-<div class="grid">
-  <div>
-    <label>Budget range (ZAR)</label>
-    <select name="budget.range">
-      <option>R25k–R50k</option><option>R50k–R100k</option><option>R100k–R250k</option><option>R250k–R500k</option><option>R500k+</option>
-    </select>
-  </div>
-  <div>
-    <label>Target launch date</label>
-    <input name="timeline.launch" type="text" placeholder="yyyy-mm-dd">
-  </div>
-</div>
-<label>Must‑have features</label>
-<textarea name="budget.must_haves"></textarea>
-
-<h2>7) Other Notes</h2>
-<textarea name="other.notes" placeholder="Compliance (POPIA/GDPR), security, performance, risks"></textarea>
-
-      
-      
-      <fieldset>
-        <legend>Privacy & Consent</legend>
-        <p class="hint">We process your information in line with South Africa’s POPIA and our Privacy Policy. Please consent to proceed.</p>
-        <label class="required"><input type="checkbox" name="consent.popia" required> I consent to Maru Online processing my information for the purpose of responding to this enquiry.</label>
-        <small class="helper">Read our <a href="https://maruonline.com/privacy" target="_blank" rel="noopener">Privacy Policy</a>.</small>
-      </fieldset>
-    
-      <div class="actions">
-        <button type="submit">Submit Brief</button>
-        <button type="reset" class="secondary">Reset</button>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Maru Online Web Dev Briefing Form (v2)</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <img src="assets/maru-logo.png" alt="Maru Online logo" />
+      <div class="title">Maru Online Web Dev Briefing Form (v2)</div>
+    </header>
+    <main class="container">
+      <div class="form-card">
+        <p>
+          <strong>About this form:</strong> This form helps us understand your
+          website project in detail. By completing it, you’ll give us the
+          context, goals, functionality needs, and design direction to propose
+          the best technical and creative solution. Please answer as clearly as
+          possible — but don’t worry if you can’t fill in every field. Focus on
+          your goals, pain points, and must-haves. We’ll guide you through the
+          rest during discovery.
+        </p>
       </div>
-    </form>
-    <p class="footer">© 2025 Maru Online. All rights reserved.</p>
-  </main>
-</body>
+
+      <form
+        class="form-card"
+        action="/thank-you.html"
+        id="maru-web-dev-brief-v2"
+        name="maru-web-dev-brief-v2"
+        method="POST"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+      >
+        <input type="hidden" name="form-name" value="maru-web-dev-brief-v2" />
+        <p class="hidden" style="display: none">
+          <label
+            >Don't fill this out if you're human: <input name="bot-field"
+          /></label>
+        </p>
+
+        <h2>0) Current Systems & Pain Points</h2>
+        <label>Current systems in use (select all that apply)</label>
+        <div class="checkbox-group">
+          <label class="tag"
+            ><input type="checkbox" name="current.systems" value="manual" />
+            Manual processes</label
+          >
+          <label class="tag"
+            ><input type="checkbox" name="current.systems" value="zoho" />
+            Zoho</label
+          >
+          <label class="tag"
+            ><input type="checkbox" name="current.systems" value="hubspot" />
+            HubSpot</label
+          >
+          <label class="tag"
+            ><input type="checkbox" name="current.systems" value="wordpress" />
+            WordPress</label
+          >
+          <label class="tag"
+            ><input type="checkbox" name="current.systems" value="excel" />
+            Excel/Spreadsheets</label
+          >
+          <label class="tag"
+            ><input type="checkbox" name="current.systems" value="custom" />
+            Custom-built</label
+          >
+          <label class="tag"
+            ><input type="checkbox" name="current.systems" value="other" />
+            Other</label
+          >
+        </div>
+        <label class="required"
+          >Summary of current website/system pain points</label
+        >
+        <textarea
+          name="current.pain_points"
+          required
+          placeholder="Describe what's not working: content updates hard, poor SEO, mobile issues, slow performance, lack of analytics, etc."
+        ></textarea>
+        <hr />
+
+        <h2>Client & Project</h2>
+        <div class="grid">
+          <div>
+            <label class="required">Company / Organisation</label>
+            <input name="client.company" type="text" required />
+          </div>
+          <div>
+            <label>Primary Contact</label>
+            <input name="client.contact_name" type="text" />
+          </div>
+          <div>
+            <label class="required">Email</label>
+            <input name="client.email" type="email" required />
+          </div>
+          <div>
+            <label>Phone</label>
+            <input name="client.phone" type="text" />
+          </div>
+        </div>
+
+        <h2>1) Project Overview</h2>
+        <label class="required">Business & website goals</label>
+        <textarea
+          name="overview.goals"
+          required
+          placeholder="e.g., increase qualified leads by 30%; launch brand site for new product line"
+        ></textarea>
+        <label>Target audience & segments</label>
+        <textarea
+          name="overview.audience"
+          placeholder="e.g., SMEs in logistics; marketing managers; procurement"
+        ></textarea>
+        <label>Key differentiators</label>
+        <textarea name="overview.differentiation"></textarea>
+        <label>Primary call-to-action (CTA)</label>
+        <input
+          name="overview.primary_cta"
+          type="text"
+          placeholder="e.g., Book a demo / Request a quote"
+        />
+        <small class="helper">Map to your sales funnel (TOFU/MOFU/BOFU).</small>
+        <label>Design inspiration URLs (comma-separated)</label>
+        <input
+          name="overview.inspiration_urls"
+          type="text"
+          placeholder="https://example.com, https://example2.com"
+        />
+
+        <h2>2) Functionality</h2>
+        <label>Core features (select all that apply)</label>
+        <div class="checkbox-group">
+          <label class="tag"
+            ><input
+              type="checkbox"
+              name="func.features"
+              value="contact-forms"
+            />
+            Contact forms</label
+          >
+          <label class="tag"
+            ><input type="checkbox" name="func.features" value="blog" />
+            Blog</label
+          >
+          <label class="tag"
+            ><input type="checkbox" name="func.features" value="cms" />
+            CMS</label
+          >
+          <label class="tag"
+            ><input type="checkbox" name="func.features" value="ecommerce" />
+            E‑commerce</label
+          >
+          <label class="tag"
+            ><input type="checkbox" name="func.features" value="booking" />
+            Booking/appointments</label
+          >
+          <label class="tag"
+            ><input type="checkbox" name="func.features" value="multilingual" />
+            Multilingual/i18n</label
+          >
+          <label class="tag"
+            ><input type="checkbox" name="func.features" value="search" /> Site
+            search</label
+          >
+          <label class="tag"
+            ><input type="checkbox" name="func.features" value="members" />
+            Member accounts</label
+          >
+        </div>
+
+        <fieldset>
+          <legend>E‑commerce (if applicable)</legend>
+          <div class="grid">
+            <div>
+              <label>Products ready?</label
+              ><select name="ecom.products_ready">
+                <option>No</option>
+                <option>Yes</option>
+              </select>
+            </div>
+            <div>
+              <label>Payment gateways</label
+              ><input
+                name="ecom.gateways"
+                type="text"
+                placeholder="e.g., PayFast, PayPal, Stripe"
+              />
+            </div>
+            <div>
+              <label>Fulfilment/shipping</label
+              ><input
+                name="ecom.shipping"
+                type="text"
+                placeholder="Carrier, rates, warehouse"
+              />
+            </div>
+          </div>
+        </fieldset>
+
+        <label>Integrations</label>
+        <input
+          name="func.integrations"
+          type="text"
+          placeholder="HubSpot, GA4, Search Console, WhatsApp, Monday.com, etc."
+        />
+
+        <h2>3) Content</h2>
+        <label>Primary navigation (top-level)</label>
+        <input
+          name="content.nav"
+          type="text"
+          placeholder="Home, About, Services, Case Studies, Blog, Contact"
+        />
+        <label>Content inventory & sources</label>
+        <textarea
+          name="content.inventory"
+          placeholder="What exists vs what must be created (copy, images, video, PDFs)"
+        ></textarea>
+        <label>Content management needs</label>
+        <select name="content.cms_need">
+          <option>Simple edits only</option>
+          <option>Full CMS – multiple editors</option>
+          <option>No CMS required</option>
+        </select>
+
+        <h2>4) Design & Branding</h2>
+        <div class="grid">
+          <div>
+            <label>Brand personality</label>
+            <select name="design.personality">
+              <option>Modern</option>
+              <option>Professional</option>
+              <option>Friendly</option>
+              <option>Corporate</option>
+              <option>Minimalist</option>
+              <option>Playful</option>
+            </select>
+          </div>
+          <div>
+            <label>Style guide available?</label>
+            <select name="design.styleguide">
+              <option>No</option>
+              <option>Yes</option>
+            </select>
+          </div>
+        </div>
+        <label>Assets available (list URLs or files to share later)</label>
+        <textarea name="design.assets"></textarea>
+
+        <h2>5) Technical Setup</h2>
+        <div class="grid">
+          <div>
+            <label>Hosting</label
+            ><input
+              name="tech.hosting"
+              type="text"
+              placeholder="e.g., Vercel, Netlify, AWS, existing cPanel"
+            />
+          </div>
+          <div>
+            <label>Domain(s)</label><input name="tech.domains" type="text" />
+          </div>
+          <div>
+            <label>Emails</label
+            ><input
+              name="tech.emails"
+              type="text"
+              placeholder="Google Workspace, Outlook, etc."
+            />
+          </div>
+          <div>
+            <label>Analytics</label
+            ><input
+              name="tech.analytics"
+              type="text"
+              placeholder="GA4, GTM, Meta Pixel"
+            />
+          </div>
+        </div>
+
+        <h2>6) Budget & Timeline</h2>
+        <div class="grid">
+          <div>
+            <label>Budget range (ZAR)</label>
+            <select name="budget.range">
+              <option>R25k–R50k</option>
+              <option>R50k–R100k</option>
+              <option>R100k–R250k</option>
+              <option>R250k–R500k</option>
+              <option>R500k+</option>
+            </select>
+          </div>
+          <div>
+            <label>Target launch date</label>
+            <input
+              name="timeline.launch"
+              type="text"
+              placeholder="yyyy-mm-dd"
+            />
+          </div>
+        </div>
+        <label>Must‑have features</label>
+        <textarea name="budget.must_haves"></textarea>
+
+        <h2>7) Other Notes</h2>
+        <textarea
+          name="other.notes"
+          placeholder="Compliance (POPIA/GDPR), security, performance, risks"
+        ></textarea>
+
+        <fieldset>
+          <legend>Privacy & Consent</legend>
+          <p class="hint">
+            We process your information in line with South Africa’s POPIA and
+            our Privacy Policy. Please consent to proceed.
+          </p>
+          <label class="required"
+            ><input type="checkbox" name="consent.popia" required /> I consent
+            to Maru Online processing my information for the purpose of
+            responding to this enquiry.</label
+          >
+          <small class="helper"
+            >Read our
+            <a
+              href="https://maruonline.com/privacy"
+              target="_blank"
+              rel="noopener"
+              >Privacy Policy</a
+            >.</small
+          >
+        </fieldset>
+
+        <div class="actions">
+          <button type="submit">Submit Brief</button>
+          <button type="reset" class="secondary">Reset</button>
+        </div>
+      </form>
+      <p class="footer">© 2025 Maru Online. All rights reserved.</p>
+    </main>
+  </body>
 </html>
