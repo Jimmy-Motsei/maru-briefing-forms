@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>AI Solution Briefing Form (v2)</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <header class="header">
+    <img src="assets/maru-logo.png" alt="Maru Online logo"/>
+    <div class="title">AI Solution Briefing Form (v2)</div>
+  </header>
+  <main class="container">
+    <div class="form-card"><p><strong>About this form:</strong> This form captures your business needs for AI-powered solutions and automation. It will help us identify your current systems, pain points, desired AI features, and success metrics so we can craft a tailored solution. Please provide practical examples where possible (e.g., “we spend 3 hours daily on manual data entry”). Leave any unknowns blank — our team and tools will fill in the gaps.</p></div>
+    
+    <div class="note">This form is GitHub Pages-ready. For submissions, deploy on Netlify and keep the <code>data-netlify="true" netlify-honeypot="bot-field"</code> attribute.</div>
+    <form class="form-card" action="/thank-you.html" id="maru-ai-solution-brief-v2" name="maru-ai-solution-brief-v2" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name">
+      <p class="hidden" style="display:none"><label>Don’t fill this out if you’re human: <input name="bot-field" /></label></p
+      > value="maru-ai-solution-brief-v2"/>
+      
+<h2>0) Current Systems & Pain Points</h2>
+<label>Current systems/platforms in use (select all that apply)</label>
+<div class="checkbox-group">
+  <label class="tag"><input type="checkbox" name="current.systems" value="manual"> Manual processes</label>
+  <label class="tag"><input type="checkbox" name="current.systems" value="zoho"> Zoho</label>
+  <label class="tag"><input type="checkbox" name="current.systems" value="salesforce"> Salesforce</label>
+  <label class="tag"><input type="checkbox" name="current.systems" value="hubspot"> HubSpot</label>
+  <label class="tag"><input type="checkbox" name="current.systems" value="sap"> SAP</label>
+  <label class="tag"><input type="checkbox" name="current.systems" value="excel"> Excel/Spreadsheets</label>
+  <label class="tag"><input type="checkbox" name="current.systems" value="custom"> Custom-built</label>
+  <label class="tag"><input type="checkbox" name="current.systems" value="other"> Other</label>
+</div>
+<label class="required">Summary of current process pain points</label>
+<textarea name="current.pain_points" required placeholder="Describe inefficiencies: manual data entry, slow lead follow-up, fragmented tools, errors, lack of reporting, compliance issues, etc."></textarea>
+<hr/>
+
+      <input type="hidden" name="form-name">
+      <p class="hidden" style="display:none"><label>Don’t fill this out if you’re human: <input name="bot-field" /></label></p
+      > value="maru-ai-solution-brief"/>
+      
+<h2>Client & Project</h2>
+<div class="grid">
+  <div>
+    <label class="required">Company / Organisation</label>
+    <input name="client.company" type="text" required>
+  </div>
+  <div>
+    <label>Primary Contact</label>
+    <input name="client.contact_name" type="text">
+  </div>
+  <div>
+    <label class="required">Email</label>
+    <input name="client.email" type="email" required>
+  </div>
+  <div>
+    <label>Phone</label>
+    <input name="client.phone" type="text">
+  </div>
+</div>
+
+<h2>1) Business Context</h2>
+<label class="required">Current challenges / goals for AI</label>
+<textarea name="context.goals" required placeholder="e.g., reduce lead response time; automate FAQ; qualify leads"></textarea>
+<label>Processes to improve</label>
+<div class="checkbox-group">
+  <label class="tag"><input type="checkbox" name="process.targets" value="lead-qualification"> Lead qualification</label>
+  <label class="tag"><input type="checkbox" name="process.targets" value="customer-support"> Customer support</label>
+  <label class="tag"><input type="checkbox" name="process.targets" value="marketing-automation"> Marketing automation</label>
+  <label class="tag"><input type="checkbox" name="process.targets" value="document-parsing"> Document parsing/extraction</label>
+  <label class="tag"><input type="checkbox" name="process.targets" value="analytics"> Predictive analytics</label>
+  <label class="tag"><input type="checkbox" name="process.targets" value="voice"> Voice/telephony</label>
+</div>
+
+<h2>2) Data & Integrations</h2>
+<label>Systems to integrate</label>
+<input name="integration.systems" type="text" placeholder="HubSpot, Slack, Monday, WhatsApp, GA4, DBs">
+<label>Data types & sensitivity</label>
+<input name="integration.data" type="text" placeholder="PII, financial, documents; POPIA/GDPR level">
+
+<h2>3) AI Features & Channels</h2>
+<label>Desired AI capabilities</label>
+<div class="checkbox-group">
+  <label class="tag"><input type="checkbox" name="ai.features" value="chatbot"> Conversational agent</label>
+  <label class="tag"><input type="checkbox" name="ai.features" value="agentic-workflows"> Agentic workflows</label>
+  <label class="tag"><input type="checkbox" name="ai.features" value="summarization"> Summarization</label>
+  <label class="tag"><input type="checkbox" name="ai.features" value="classification"> Classification & routing</label>
+  <label class="tag"><input type="checkbox" name="ai.features" value="recommendation"> Recommendations</label>
+</div>
+<label>Channels</label>
+<div class="checkbox-group">
+  <label class="tag"><input type="checkbox" name="ai.channels" value="web"> Website</label>
+  <label class="tag"><input type="checkbox" name="ai.channels" value="whatsapp"> WhatsApp</label>
+  <label class="tag"><input type="checkbox" name="ai.channels" value="email"> Email</label>
+  <label class="tag"><input type="checkbox" name="ai.channels" value="internal"> Internal tool</label>
+</div>
+
+<h2>4) UX & Brand</h2>
+<label>Interface needs</label>
+<input name="ux.ui" type="text" placeholder="dashboard, chatbot widget, forms">
+<label>Brand tone</label>
+<input name="ux.tone" type="text" placeholder="e.g., professional, friendly, concise">
+
+<h2>5) Security & Compliance</h2>
+<label>Compliance requirements</label>
+<input name="security.compliance" type="text" placeholder="POPIA, GDPR, HIPAA">
+<label>Access control / roles</label>
+<input name="security.rbac" type="text" placeholder="admin, editor, viewer">
+
+<h2>6) Budget, Timeline & ROI</h2>
+<div class="grid">
+  <div>
+    <label>Budget range (ZAR)</label>
+    <select name="budget.range">
+      <option>R25k–R50k</option><option>R50k–R100k</option><option>R100k–R250k</option><option>R250k–R500k</option><option>R500k+</option>
+    </select>
+  </div>
+  <div>
+    <label>Target go-live</label>
+    <input name="timeline.launch" type="text" placeholder="yyyy-mm-dd">
+  </div>
+</div>
+<label>Success metrics</label>
+<input name="roi.metrics" type="text" placeholder="e.g., response time < 2 min; +30% qualified leads">
+
+<h2>7) Other Notes</h2>
+<textarea name="other.notes"></textarea>
+
+      
+      
+      <fieldset>
+        <legend>Privacy & Consent</legend>
+        <p class="hint">We process your information in line with South Africa’s POPIA and our Privacy Policy. Please consent to proceed.</p>
+        <label class="required"><input type="checkbox" name="consent.popia" required> I consent to Maru Online processing my information for the purpose of responding to this enquiry.</label>
+        <small class="helper">Read our <a href="https://maruonline.com/privacy" target="_blank" rel="noopener">Privacy Policy</a>.</small>
+      </fieldset>
+    
+      <div class="actions">
+        <button type="submit">Submit Brief</button>
+        <button type="reset" class="secondary">Reset</button>
+      </div>
+    </form>
+    <p class="footer">© 2025 Maru Online. All rights reserved.</p>
+  </main>
+</body>
+</html>
