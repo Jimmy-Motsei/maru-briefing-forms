@@ -57,6 +57,13 @@ body {
   margin: 16px 0;
 }
 h2 {
+  /* Add h1 styling for main heading */
+  h1 {
+    font-size: 3.3rem;
+    margin: 36px 0 18px;
+    color: #0b2533;
+    line-height: 1.2;
+  }
   margin: 32px 0 16px;
   color: #0b2533;
   line-height: 1.4;
