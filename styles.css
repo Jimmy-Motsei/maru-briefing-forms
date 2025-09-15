@@ -1,4 +1,4 @@
-git:root {
+:root {
   --brand-primary: #0ea5b6; /* teal from logo */
   --brand-dark: #37474f;
   --brand-light: #f6f9fb;
@@ -32,7 +32,7 @@ body {
   text-decoration: none;
 }
 .header img {
-  height: 120px; /* 50% size increase from previous 80px */
+  height: 120px;
   cursor: pointer;
   transition: opacity 0.2s;
 }
@@ -56,14 +56,13 @@ body {
   padding: 24px;
   margin: 16px 0;
 }
+h1 {
+  font-size: 3.3rem;
+  margin: 36px 0 18px;
+  color: #0b2533;
+  line-height: 1.2;
+}
 h2 {
-  /* Add h1 styling for main heading */
-  h1 {
-    font-size: 3.3rem;
-    margin: 36px 0 18px;
-    color: #0b2533;
-    line-height: 1.2;
-  }
   margin: 32px 0 16px;
   color: #0b2533;
   line-height: 1.4;
@@ -140,6 +139,7 @@ textarea:focus {
 }
 button {
   all: unset;
+  display: inline-block;
   background: var(--brand-primary);
   color: #fff;
   padding: 12px 18px;
