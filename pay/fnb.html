@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>FNB Payment - Maru Online</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <a href="https://www.maruonline.com" target="_blank" rel="noopener">
+        <img src="../assets/maru-logo.png" alt="Maru Online logo" />
+      </a>
+      <h1 class="title">FNB Payment</h1>
+    </header>
+    <main class="container">
+      <div class="form-card">
+        <h2>Payment Instructions</h2>
+        <p><strong>Amount:</strong> R<span id="amount">0</span></p>
+        <p><strong>Reference:</strong> <span id="reference">N/A</span></p>
+
+        <div
+          style="
+            background: #fef3c7;
+            padding: 16px;
+            border-radius: 8px;
+            border: 1px solid #f59e0b;
+            margin: 16px 0;
+          "
+        >
+          <h3>🚧 Temporary Payment Page</h3>
+          <p>
+            This is a placeholder payment page. In production, this would
+            integrate with FNB's merchant API.
+          </p>
+          <p>
+            <strong>For testing purposes:</strong> Click "Simulate Payment"
+            below to continue with the flow.
+          </p>
+        </div>
+
+        <div class="actions">
+          <button id="simulate-payment" class="btn btn-primary">
+            Simulate Payment
+          </button>
+          <a href="/support.html" class="btn btn-secondary">Cancel</a>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      (function () {
+        const urlParams = new URLSearchParams(window.location.search);
+        const amount = urlParams.get("amount") || "375";
+        const ref = urlParams.get("ref") || "N/A";
+
+        document.getElementById("amount").textContent = amount;
+        document.getElementById("reference").textContent = ref;
+
+        document
+          .getElementById("simulate-payment")
+          .addEventListener("click", function () {
+            // Simulate successful payment
+            const returnUrl = `/paid.html?ref=${ref}`;
+            window.location.href = returnUrl;
+          });
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Support Ticket Form</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <a href="https://www.maruonline.com" target="_blank" rel="noopener">
+        <img src="assets/maru-logo.png" alt="Maru Online logo" />
+      </a>
+      <h1 class="title">Support Ticket Form</h1>
+    </header>
+    <main class="container">
+      <div class="form-card">
+        <p>
+          <strong>About this form:</strong> Use this form to submit support
+          tickets for any issues, questions, or requests related to your Maru
+          Online services. Please provide as much detail as possible to help us
+          assist you quickly and effectively. All fields marked with an asterisk
+          (*) are required.
+        </p>
+      </div>
+
+      <form
+        class="form-card"
+        action="/thank-you.html"
+        id="maru-support-ticket"
+        name="maru-support-ticket"
+        method="POST"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+      >
+        <input type="hidden" name="form-name" value="maru-support-ticket" />
+        <p class="hidden" style="display: none">
+          <label
+            >Don't fill this out if you're human: <input name="bot-field"
+          /></label>
+        </p>
+
+        <h2>Contact Information</h2>
+        <div class="grid">
+          <div>
+            <label class="required" for="full_name">Full Name</label>
+            <input name="full_name" id="full_name" type="text" required />
+          </div>
+          <div>
+            <label class="required" for="email">Email</label>
+            <input name="email" id="email" type="email" required />
+          </div>
+          <div>
+            <label for="company">Company</label>
+            <input name="company" id="company" type="text" />
+          </div>
+          <div>
+            <label for="phone">Phone</label>
+            <input name="phone" id="phone" type="text" />
+          </div>
+        </div>
+
+        <h2>Ticket Details</h2>
+        <div class="grid">
+          <div>
+            <label class="required" for="asset_type">Asset Type</label>
+            <select name="asset_type" id="asset_type" required>
+              <option value="">Select asset type...</option>
+              <option value="website">Website</option>
+              <option value="ai-solution">AI Solution</option>
+              <option value="mobile-app">Mobile App</option>
+              <option value="api-integration">API Integration</option>
+              <option value="hosting">Hosting</option>
+              <option value="domain">Domain</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div>
+            <label class="required" for="priority">Priority</label>
+            <select name="priority" id="priority" required>
+              <option value="">Select priority...</option>
+              <option value="low">Low - General inquiry</option>
+              <option value="medium">Medium - Minor issue</option>
+              <option value="high">High - Service disruption</option>
+              <option value="urgent">Urgent - Critical issue</option>
+            </select>
+          </div>
+        </div>
+
+        <label class="required" for="subject">Subject</label>
+        <input
+          name="subject"
+          id="subject"
+          type="text"
+          required
+          placeholder="Brief description of your issue or request"
+        />
+
+        <label class="required" for="description">Description</label>
+        <textarea
+          name="description"
+          id="description"
+          required
+          placeholder="Please provide detailed information about your issue, including steps to reproduce if applicable, error messages, and any other relevant details."
+        ></textarea>
+
+        <h2>Technical Information</h2>
+        <div class="grid">
+          <div>
+            <label for="environment">Environment</label>
+            <select name="environment" id="environment">
+              <option value="">Select environment...</option>
+              <option value="production">Production</option>
+              <option value="staging">Staging</option>
+              <option value="development">Development</option>
+              <option value="local">Local</option>
+              <option value="unknown">Unknown</option>
+            </select>
+          </div>
+          <div>
+            <label for="url">URL (if applicable)</label>
+            <input
+              name="url"
+              id="url"
+              type="url"
+              placeholder="https://example.com"
+            />
+          </div>
+        </div>
+
+        <label for="attachments">Attachments</label>
+        <textarea
+          name="attachments"
+          id="attachments"
+          placeholder="If you have files to share, please provide download links or describe what you'd like to attach. We'll follow up if we need the actual files."
+        ></textarea>
+        <small class="helper"
+          >Provide links to files stored in cloud services (Google Drive,
+          Dropbox, etc.) or describe the files you need to share.</small
+        >
+
+        <h2>Terms & Conditions</h2>
+        <details id="terms" class="terms">
+          <summary>Terms & Conditions</summary>
+          <div
+            style="
+              margin-top: 16px;
+              padding: 16px;
+              background: #f9fafb;
+              border-radius: 8px;
+              border: 1px solid #e5e7eb;
+            "
+          >
+            <h2>Support Terms & Conditions — Charges & Deposits</h2>
+            <p><strong>Effective:</strong> 3 Oct 2025</p>
+            <p><strong>Business hours:</strong> Mon–Fri 09:00–17:00 SAST</p>
+            <p>
+              <strong>Standard rate:</strong> R 275 / hour (ex VAT) during
+              business hours
+            </p>
+            <p>
+              <strong>After-hours rate:</strong> R 350 / hour (ex VAT) for
+              evenings, weekends & SA public holidays
+            </p>
+
+            <h3>1. Scope of Work</h3>
+            <p>
+              Covers investigation, diagnosis, configuration, code fixes,
+              content edits, minor enhancements, and liaison with hosting/BSPs.
+            </p>
+            <p>
+              Excludes major new feature work, third-party licence fees, or
+              repairs for unauthorised changes (quoted separately).
+            </p>
+
+            <h3>2. How Charges Accrue</h3>
+            <ul>
+              <li>
+                Billable time runs from the start of investigation/reproduction
+                until resolve/pause/hand-off.
+              </li>
+              <li>
+                Logged in 15-minute increments and rounded up to the next
+                increment.
+              </li>
+              <li>Minimum billable block per new ticket = 15 minutes.</li>
+              <li>
+                Critical / production-down work may start immediately and will
+                be logged from the first minute.
+              </li>
+            </ul>
+
+            <h3>3. Deposit Policy</h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>Client type</th>
+                  <th>Deposit at ticket creation</th>
+                  <th>Hourly charging</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>With active Support SLA</td>
+                  <td>
+                    No deposit required — work logged against SLA / billed
+                    monthly
+                  </td>
+                  <td>R 275 / hr (business hours), R 350 / hr (after-hours)</td>
+                </tr>
+                <tr>
+                  <td>Without Support SLA</td>
+                  <td>
+                    R 375 deposit up-front — covers the first hour; payable
+                    immediately on approval
+                  </td>
+                  <td>
+                    After the first hour, normal hourly rates apply in 15-min
+                    blocks
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+
+        <h2>SLA Status</h2>
+        <label class="required"
+          >Do you have an active Support SLA with Maru Online?</label
+        >
+        <div class="radio-group">
+          <label class="tag">
+            <input type="radio" name="has_sla" value="yes" required />
+            Yes
+          </label>
+          <label class="tag">
+            <input type="radio" name="has_sla" value="no" required />
+            No
+          </label>
+        </div>
+        <div
+          id="deposit-note"
+          style="
+            display: none;
+            margin-top: 8px;
+            padding: 8px;
+            background: #fef3c7;
+            border: 1px solid #f59e0b;
+            border-radius: 8px;
+            color: #92400e;
+          "
+        >
+          <small
+            >A R 375 deposit (first hour) is payable immediately before work
+            starts.</small
+          >
+        </div>
+
+        <input type="hidden" name="deposit_required" value="false" />
+        <input type="hidden" name="deposit_amount" value="0" />
+
+        <fieldset>
+          <legend>Privacy & Consent</legend>
+          <p class="hint">
+            We process your information in line with South Africa's POPIA and
+            our Privacy Policy. Please consent to proceed.
+          </p>
+          <label class="required">
+            <input type="checkbox" name="accept_terms" required /> I accept the
+            Support Terms & Conditions, including the hourly rates and, if no
+            SLA is in place, the R 375 deposit.
+          </label>
+          <small class="helper">
+            Read our
+            <a
+              href="https://maruonline.com/privacy"
+              target="_blank"
+              rel="noopener"
+              >Privacy Policy</a
+            >.
+          </small>
+        </fieldset>
+
+        <section class="estimate-block">
+          <h2>Estimate & Payment</h2>
+          <p class="help">
+            We calculate the initial estimate from your ticket details. If you
+            don't have an SLA, a R 375 deposit is payable now.
+          </p>
+
+          <div class="estimate-summary">
+            <div class="grid">
+              <div>
+                <strong>Rate Applied</strong>
+                <div id="rate_applied" class="pill">R0</div>
+              </div>
+              <div>
+                <strong>Deposit</strong>
+                <div id="deposit_display" class="pill">R0</div>
+              </div>
+              <div>
+                <strong>Subtotal (Estimate)</strong>
+                <div id="subtotal_display" class="pill">R0</div>
+              </div>
+              <div>
+                <strong>Total Due Now</strong>
+                <div id="total_due_display" class="pill">R0</div>
+              </div>
+            </div>
+            <p class="help">
+              Actual time is billed in 15-minute increments per Terms.
+            </p>
+          </div>
+
+          <div class="actions">
+            <button
+              class="btn btn-secondary"
+              type="button"
+              id="btn_generate_estimate"
+            >
+              Generate Estimate & Pay (FNB)
+            </button>
+            <a
+              id="pay_now_link"
+              class="btn btn-primary"
+              href="#"
+              target="_blank"
+              rel="noopener"
+              style="display: none"
+              >Pay Now via FNB</a
+            >
+            <span id="estimate_status" class="help"></span>
+          </div>
+        </section>
+
+        <div class="actions">
+          <button type="submit" id="btn_submit_ticket" disabled>
+            Submit Support Ticket
+          </button>
+          <button type="reset" class="secondary">Reset</button>
+        </div>
+      </form>
+      <p class="footer">© 2025 Maru Online. All rights reserved.</p>
+    </main>
+
+    <script>
+      (function () {
+        const rateEl = document.getElementById("rate_applied");
+        const depEl = document.getElementById("deposit_display");
+        const subEl = document.getElementById("subtotal_display");
+        const dueEl = document.getElementById("total_due_display");
+        const btnGen = document.getElementById("btn_generate_estimate");
+        const payA = document.getElementById("pay_now_link");
+        const statusEl = document.getElementById("estimate_status");
+        const submitBtn =
+          document.getElementById("btn_submit_ticket") ||
+          document.querySelector('button[type="submit"]');
+
+        // Helpers
+        const fmt = (n) =>
+          "R " +
+          Number(n || 0)
+            .toFixed(2)
+            .replace(/\.00$/, "");
+        const saBusiness = () => {
+          try {
+            const now = new Date();
+            // Africa/Johannesburg = UTC+2, no DST; use local time if user is in SA
+            const day = now.getDay(); // 0 Sun .. 6 Sat
+            const hour = now.getHours(); // 0..23
+            const isWeekday = day >= 1 && day <= 5;
+            const inHours = hour >= 9 && hour < 17;
+            return isWeekday && inHours;
+          } catch {
+            return true;
+          }
+        };
+        const hasSla = () => {
+          const yes = document.querySelector(
+            'input[name="has_sla"][value="yes"]'
+          );
+          return yes && yes.checked;
+        };
+        const getSel = (name) =>
+          (
+            document.getElementById(name) ||
+            document.querySelector(`[name="${name}"]`)
+          )?.value || "";
+
+        function deriveHours() {
+          const p = (getSel("priority") || "").toLowerCase();
+          const a = (getSel("asset_type") || "").toLowerCase();
+          let base = 1.0;
+          if (p.includes("critical")) base = 2.0;
+          else if (p.includes("high")) base = 1.5;
+          else if (p.includes("low")) base = 0.5;
+          let bump = 0.25;
+          if (/(assistant|chatbot|whatsapp|voice|ivr)/.test(a)) bump = 0.5;
+          else if (/website/.test(a)) bump = 0.25;
+          const hours = Math.max(0.5, Math.min(4, base + bump));
+          return Number(hours.toFixed(2));
+        }
+
+        function recalc() {
+          const rate = saBusiness() ? 275 : 350;
+          const deposit = hasSla() ? 0 : 375;
+          const hours = deriveHours();
+          const subtotal = rate * hours;
+          const dueNow = deposit;
+          rateEl.textContent = fmt(rate);
+          depEl.textContent = fmt(deposit);
+          subEl.textContent = fmt(subtotal);
+          dueEl.textContent = fmt(dueNow);
+
+          // Gate submit if non-SLA
+          if (submitBtn) submitBtn.disabled = !hasSla();
+        }
+        document.addEventListener("change", (e) => {
+          if (
+            ["priority", "asset_type", "has_sla"].includes(e.target.name) ||
+            ["priority", "asset_type"].includes(e.target.id)
+          )
+            recalc();
+        });
+        recalc();
+
+        function gather() {
+          const getVal = (id) =>
+            (document.getElementById(id) || {}).value || "";
+          const rate = saBusiness() ? 275 : 350;
+          const hours = deriveHours();
+          const deposit = hasSla() ? 0 : 375;
+          return {
+            customer: {
+              name: getVal("full_name"),
+              email: getVal("email"),
+              company: getVal("company"),
+              phone: getVal("phone"),
+            },
+            ticket: {
+              subject: getVal("subject"),
+              priority: getSel("priority"),
+              asset_type: getSel("asset_type"),
+              environment: getSel("environment"),
+              url: getVal("url"),
+            },
+            estimate: {
+              hours,
+              rate,
+              work_window: saBusiness() ? "business_hours" : "after_hours",
+              deposit,
+              subtotal: rate * hours,
+              currency: "ZAR",
+              has_sla: hasSla(),
+            },
+            payment: { provider: "fnb" },
+          };
+        }
+
+        btnGen.addEventListener("click", async () => {
+          statusEl.textContent = "Creating estimate...";
+          payA.style.display = "none";
+          payA.removeAttribute("href");
+
+          // basic guards
+          if (!document.querySelector('input[name="accept_terms"]:checked')) {
+            statusEl.textContent =
+              "Please accept the Terms & Conditions first.";
+            return;
+          }
+          const email = (document.getElementById("email") || {}).value || "";
+          if (!email) {
+            statusEl.textContent = "Please enter your email address.";
+            return;
+          }
+
+          try {
+            const res = await fetch("/.netlify/functions/create-estimate-fnb", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(gather()),
+            });
+            const json = await res.json();
+            if (!res.ok || !json.ok)
+              throw new Error(json.error || "Failed to create estimate");
+
+            statusEl.textContent = "Estimate created.";
+            if (json.paymentUrl) {
+              payA.href = json.paymentUrl;
+              payA.style.display = "";
+              statusEl.textContent +=
+                " Please complete payment to unlock submission.";
+            } else {
+              // SLA: allow immediate submission
+              if (submitBtn) submitBtn.disabled = false;
+              statusEl.textContent += " (SLA client: no payment required.)";
+            }
+          } catch (err) {
+            console.error(err);
+            statusEl.textContent = "Error: " + err.message;
+          }
+        });
+
+        // Check for payment confirmation on page load
+        if (localStorage.getItem("paymentConfirmed") === "true") {
+          if (submitBtn) submitBtn.disabled = false;
+          statusEl.textContent =
+            "Payment confirmed. You can now submit your ticket.";
+          localStorage.removeItem("paymentConfirmed");
+        }
+
+        // Generate ticket ID seed before form submission
+        document
+          .getElementById("maru-support-ticket")
+          .addEventListener("submit", function (e) {
+            const timestamp = Date.now().toString(36);
+            const random = Math.random().toString(36).substr(2, 5);
+            const ticketId = "TKT-" + timestamp + "-" + random;
+
+            const ticketInput = document.createElement("input");
+            ticketInput.type = "hidden";
+            ticketInput.name = "ticket_id";
+            ticketInput.value = ticketId;
+            this.appendChild(ticketInput);
+          });
+      })();
+    </script>
+  </body>
+</html>
