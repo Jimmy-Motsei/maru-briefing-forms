@@ -1,0 +1,12 @@
+{
+  "name": "maru-briefing-forms-functions",
+  "version": "1.0.0",
+  "description": "Netlify Functions for Maru Briefing Forms",
+  "main": "index.js",
+  "dependencies": {
+    "node-quickbooks": "^2.0.0"
+  },
+  "engines": {
+    "node": "18"
+  }
+}

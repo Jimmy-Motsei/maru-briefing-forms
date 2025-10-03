@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Payment Confirmation - Maru Online</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <a href="https://www.maruonline.com" target="_blank" rel="noopener">
+        <img src="assets/maru-logo.png" alt="Maru Online logo" />
+      </a>
+      <h1 class="title">Payment Confirmation</h1>
+    </header>
+    <main class="container">
+      <div class="form-card">
+        <div id="payment-status">
+          <h2>Processing Payment...</h2>
+          <p>Please wait while we confirm your payment.</p>
+        </div>
+
+        <div id="payment-success" style="display: none">
+          <h2>✅ Payment Confirmed</h2>
+          <p>
+            Your payment has been successfully processed. You can now submit
+            your support ticket.
+          </p>
+          <div class="actions">
+            <a href="/support.html" class="btn btn-primary"
+              >Back to Support Form</a
+            >
+          </div>
+        </div>
+
+        <div id="payment-error" style="display: none">
+          <h2>❌ Payment Issue</h2>
+          <p>
+            There was an issue processing your payment. Please contact support
+            if the problem persists.
+          </p>
+          <div class="actions">
+            <a href="/support.html" class="btn btn-secondary">Try Again</a>
+            <a href="mailto:support@maruonline.com" class="btn btn-primary"
+              >Contact Support</a
+            >
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      (function () {
+        const urlParams = new URLSearchParams(window.location.search);
+        const ref = urlParams.get("ref");
+
+        if (!ref) {
+          document.getElementById("payment-status").style.display = "none";
+          document.getElementById("payment-error").style.display = "block";
+          return;
+        }
+
+        // Check payment status
+        async function checkPaymentStatus() {
+          try {
+            const response = await fetch(
+              `/.netlify/functions/payment-status?ref=${ref}`
+            );
+            const data = await response.json();
+
+            if (data.ok && data.paid) {
+              // Payment confirmed
+              localStorage.setItem("paymentConfirmed", "true");
+              document.getElementById("payment-status").style.display = "none";
+              document.getElementById("payment-success").style.display =
+                "block";
+            } else {
+              // Payment not yet confirmed, check again in 2 seconds
+              setTimeout(checkPaymentStatus, 2000);
+            }
+          } catch (error) {
+            console.error("Error checking payment status:", error);
+            document.getElementById("payment-status").style.display = "none";
+            document.getElementById("payment-error").style.display = "block";
+          }
+        }
+
+        // Start checking payment status
+        checkPaymentStatus();
+      })();
+    </script>
+  </body>
+</html>
